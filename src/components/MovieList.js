@@ -1,5 +1,6 @@
 import React from "react";
 import MovieItem from "./MovieItem";
+import "./MovieList.css"
 
 const MovieList = (movies) => {
   console.log("movie name and id", movies);
@@ -10,9 +11,18 @@ const MovieList = (movies) => {
   }
 
   const movieNodes = movies.movies.map(movie => {
+    if (movie.like === false){
+      movie.like = "Miss";
+    }else{
+      movie.like = "Hit";
+    }
     return (
       <MovieItem key={movie._id}>
-        {movie.name}
+        <p>{movie.name}</p>
+        <p>{movie.genre}</p>
+        <p>{movie.language}</p>
+        <img className="movie-image" src={movie.image}></img>
+        <input type="button" value={movie.like}></input>
       </MovieItem>
     );
   });
