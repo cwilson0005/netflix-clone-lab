@@ -10,7 +10,7 @@ const MovieItem = (props) => {
       <p>{props.movieName}</p>
       <p>{props.movieGenre}</p>
       <p>{props.movieLanguage}</p>
-      <img className="movie-image" src={props.movieImage} alt="Image is coming"></img>
+      <img className="movie-image" src={props.movieImage} alt=""></img>
       <MovieToggle toggleValue={props.toggleValue}/>
     </div>)
 };
