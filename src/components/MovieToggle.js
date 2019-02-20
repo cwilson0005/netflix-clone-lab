@@ -1,8 +1,7 @@
 import React from "react";
 
 const MovieToggle = (props) => {
-  console.log("toggle props:", props.toggleValue)
-  return null;
+  return (<input type="button" value={props.toggleValue}></input>);
 };
 
 export default MovieToggle;

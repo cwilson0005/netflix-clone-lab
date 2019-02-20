@@ -11,18 +11,16 @@ const MovieList = (movies) => {
   }
 
   const movieNodes = movies.movies.map(movie => {
+
     if (movie.like === false){
       movie.like = "Miss";
     }else{
       movie.like = "Hit";
     }
+
     return (
-      <MovieItem key={movie._id} toggleValue={movie.like}>
-        <p>{movie.name}</p>
-        <p>{movie.genre}</p>
-        <p>{movie.language}</p>
-        <img className="movie-image" src={movie.image} alt="Image is coming"></img>
-        <input type="button" value={movie.like}></input>
+      <MovieItem key={movie._id} toggleValue={movie.like} movieName={movie.name}
+      movieGenre={movie.genre} movieLanguage={movie.language} movieImage={movie.image}>
       </MovieItem>
     );
   });
