@@ -11,15 +11,15 @@ const MovieList = (movies) => {
 
   const movieNodes = movies.movies.map(movie => {
     return (
-      <MovieItem key={movie.id}>
+      <MovieItem key={movie._id}>
         {movie.name}
       </MovieItem>
     );
   });
 
   return (
-    <div>
-    {movieNodes}
+    <div className="movie-list">
+      {movieNodes}
     </div>
   );
 }
