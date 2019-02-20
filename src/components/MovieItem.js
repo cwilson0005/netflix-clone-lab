@@ -2,11 +2,13 @@ import React from "react";
 import "./MovieItem.css"
 import MovieToggle from "./MovieToggle";
 
-const MovieItem = ({children}) => (
-  <div className="media-card">
+const MovieItem = (props, {children}) => {
+  // console.log(props.toggleValue)
+
+  return (<div className="media-card">
     {children}
-    <MovieToggle movieLike={children[4].props.value}/>
-  </div>
-);
+    <MovieToggle toggleValue={props.toggleValue}/>
+  </div>)
+};
 
 export default MovieItem;

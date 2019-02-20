@@ -17,7 +17,7 @@ const MovieList = (movies) => {
       movie.like = "Hit";
     }
     return (
-      <MovieItem key={movie._id}>
+      <MovieItem key={movie._id} toggleValue={movie.like}>
         <p>{movie.name}</p>
         <p>{movie.genre}</p>
         <p>{movie.language}</p>
