@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from "react";
+import MovieList from "../components/MovieList";
 
 class MovieBox extends Component {
 
@@ -6,7 +7,7 @@ class MovieBox extends Component {
     super(props);
     this.state = {
       movies: []
-    }
+    };
   }
 
   componentDidMount(){
@@ -18,7 +19,6 @@ class MovieBox extends Component {
       if (request.status !== 200) return;
       const jsonString = request.responseText;
       const data = JSON.parse(jsonString);
-      // data.feed.entry is the top 20 songs
       this.setState({movies: data})
     });
     request.send();
@@ -29,6 +29,7 @@ class MovieBox extends Component {
     return(
       <Fragment>
         <h2>CodeClanFlix</h2>
+        <MovieList movies={this.state.movies}/>
       </Fragment>
     )
   }
