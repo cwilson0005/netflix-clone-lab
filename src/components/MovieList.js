@@ -21,7 +21,7 @@ const MovieList = (movies) => {
         <p>{movie.name}</p>
         <p>{movie.genre}</p>
         <p>{movie.language}</p>
-        <img className="movie-image" src={movie.image}></img>
+        <img className="movie-image" src={movie.image} alt="Image is coming"></img>
         <input type="button" value={movie.like}></input>
       </MovieItem>
     );
